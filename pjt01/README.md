@@ -18,7 +18,7 @@
 
   - [Result](https://github.com/epstlight/PJT/blob/master/pjt01/boxoffice.csv)
 
-    - Open API를 통해서 `영화 대표코드`, `영화명`, `(해당일)누적관객수`의 Data를 얻어 최신의 누적 관객수를 보장하여 Write 
+    - Open API를 통해 `영화 대표코드`, `영화명`, `(해당일)누적관객수`의 Data를 얻어 가장 최신 누적 관객수를 보장하여 Write 
 
   - [API Interface](http://www.kobis.or.kr/kobisopenapi/homepg/apiservice/searchServiceInfo.do)
 

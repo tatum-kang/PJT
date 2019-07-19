@@ -41,7 +41,7 @@ with open('movie.csv', 'w', encoding='utf-8', newline='') as newf:
             grade = movie_info.get('audits')
             movie_grade = '' if grade == [] else grade[0].get('watchGradeNm')
            
-            #infor dict 작성
+            #info dict 작성
             movie_info_row = {
                 '영화 대표코드': movie_code,
                 '영화명(국문)': movie_info.get('movieNm'),

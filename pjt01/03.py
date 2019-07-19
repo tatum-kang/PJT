@@ -18,16 +18,16 @@ with open('director.csv', 'w', encoding='utf-8', newline='') as newf:
         for row in reader :
             director = row['감독명']
             directors_id = []
-            if director != '':  # 감독명이 없는게 있기 때문에 걸러줌
+            if director != '':  # 감독명이 없는 영화 배제를 위한 if문
                 movie_director = director.split('(')[0]
-                movie_name = row['영화명(국문)']  ## 동명이인이 있어서 걸러주기 위해서 영화명 포함하여 검색 
+                movie_name = row['영화명(국문)']  # 동명이인 배제를 위한 영화명 참조
                 result = requests.get(f'{url}&peopleNm={movie_director}&filmoNames={movie_name}').json()
                 movie_people = result.get('peopleListResult').get('peopleList')
 
                 for person in movie_people:
                     role = person.get('repRoleNm')
                     director_id = person.get('peopleCd')
-                    if role == '감독' and director_id not in directors_id:
+                    if role == '감독' and director_id not in directors_id:  # only '감독' & 중복 제거하기 위한 if문
                         directors_id.append(director_id)
                         filmo_list = person.get('filmoNames').split('|')
                         movie_info_row = {
