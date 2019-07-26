@@ -14,11 +14,11 @@
 
 - **주간/주말 박스오피스 데이터 수집**
 
-  - [Code](https://github.com/epstlight/PJT/blob/master/pjt01/01.py)
+  - [Code](https://lab.ssafy.com/stlight/pjt/blob/master/pjt01/01.py)
 
-  - [Result](https://github.com/epstlight/PJT/blob/master/pjt01/boxoffice.csv)
+  - [Result: `boxoffice.csv`](https://lab.ssafy.com/stlight/pjt/blob/master/pjt01/boxoffice.csv)
 
-    - Open API를 통해 `영화 대표코드`, `영화명`, `(해당일)누적관객수`의 Data를 얻어 가장 최신 누적 관객수를 보장하여 Write 
+    - 영화진흥원 Open API를 통해 `영화 대표코드`, `영화명`, `(해당일)누적관객수`의 Data를 얻어 가장 최신 누적 관객수를 보장하여 `boxoffice.csv`  파일을 생성하고 Write 
 
   - [API Interface](http://www.kobis.or.kr/kobisopenapi/homepg/apiservice/searchServiceInfo.do)
 
@@ -30,11 +30,11 @@
 
 - **영화 상세정보 수집**
 
-  - [Code](https://github.com/epstlight/PJT/blob/master/pjt01/02.py)
+  - [Code](https://lab.ssafy.com/stlight/pjt/blob/master/pjt01/02.py)
 
-  - [Result](https://github.com/epstlight/PJT/blob/master/pjt01/movie.csv)
+  - [Result: `movie.csv`](https://lab.ssafy.com/stlight/pjt/blob/master/pjt01/movie.csv)
 
-    - 위에서 얻은 Data 중 `영화 대표코드`를 통하여 상세한 영화정보 Write
+    - 위 결과인 `boxoffice.csv`파일에서 `영화 대표코드`를 통하여 상세한 영화정보 Data를 얻고, 이를 `movie.csv`파일을 생성하고  Write
 
   - [API Interface](http://www.kobis.or.kr/kobisopenapi/homepg/apiservice/searchServiceInfo.do)
 
@@ -47,11 +47,11 @@
   
 - **영화인 정보 수집**
 
-  - [Code](https://github.com/epstlight/PJT/blob/master/pjt01/03.py)
+  - [Code](https://lab.ssafy.com/stlight/pjt/blob/master/pjt01/03.py)
 
-  - [Result](https://github.com/epstlight/PJT/blob/master/pjt01/director.csv)
+  - [Result: `director.csv`](https://lab.ssafy.com/stlight/pjt/blob/master/pjt01/director.csv)
 
-    - 위에서 얻은 Data 중 `영화인명`을 통하여 해당 영화인의 정보 Write
+    - 위 결과인 `movie.csv`파일에서 `영화인명`을 통하여 해당 영화인 Data를 얻고, 이를 `director.csv`파일을 생성하고 Write
     
     - 동일 인물 배제를 하기 위하여 `영화명`을 통하여 Filtering
   - [API Interface](http://www.kobis.or.kr/kobisopenapi/homepg/apiservice/searchServiceInfo.do)
