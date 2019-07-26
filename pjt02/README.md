@@ -35,13 +35,15 @@
   - [Result : `.jpg`](https://lab.ssafy.com/stlight/pjt/tree/master/pjt02/images)
 
     - 위 결과의 `movie_naver.csv` 파일에서 `영화 썸네일 이미지의 URL` Data를 얻고, 이를 통하여 영화 포스터를 `.jpg` 파일로 저장
-  - 파일명은 마찬가지로 `movie_naver.csv`에서  `영진위 영화 대표코드`를 읽어와서 이를 적용
+    
+    - 파일명은 마찬가지로 `movie_naver.csv`에서  `영진위 영화 대표코드`를 읽어와서 이를 적용
   
-- 기본 요청
-  
+  - 기본 요청
+    
     - Image 요청 기본 python code
     
     ```python
-    requests.get({썸네일 이미지의 URL}).content
-    ```
-
+       requests.get({썸네일 이미지의 URL}).content
+      ```
+    
+  - 이웃집 토토로의 경우 URL오류로 인해 Image 누락
