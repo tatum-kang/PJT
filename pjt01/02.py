@@ -1,5 +1,5 @@
 # 영화 상세정보 
-import requests, csv, pprint
+import requests, csv
 from decouple import config
 from pprint import pprint
 

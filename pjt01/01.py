@@ -1,5 +1,5 @@
 # 주간/주말 박스오피스 데이터 
-import requests, csv, pprint
+import requests, csv
 from decouple import config
 from pprint import pprint
 from datetime import datetime, timedelta
