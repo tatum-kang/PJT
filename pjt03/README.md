@@ -168,5 +168,5 @@
 
 ### |Result
 
-![result](C:\Users\student\development\PJT\pjt03\결과물.jpg)
+![result](결과물.jpg)
 
