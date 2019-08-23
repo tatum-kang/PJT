@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block title %}영화 정보 수정 요청{% endblock title %}
+
+{% block content %}
+<h1>영화 정보 수정 요청</h1>
+<br>
+<form action="/movies/{{ pk_num }}/update/">
+  <label for="title">영화명(국문)</label>
+  <input id="title" type="text" name="title" value="{{ edit_movie.title }}"><br>
+
+  <label for="title_en">영화명(영문)</label>
+  <input id="title_en" type="text" name="title_en" value="{{ edit_movie.title_en }}"><br>
+
+  <label for="audience">누적 관객수</label>
+  <input id="audience" type="number" name="audience" value="{{ edit_movie.audience }}"><br>
+
+  <label for="open_date">개봉일</label>
+  <input id="open_date" type="date" name="open_date" value="{{ edit_movie.open_date|date:"Y-m-d" }}"><br>
+  <label for="genre">장르</label>
+  <input id="genre" type="text" name="genre" value="{{ edit_movie.genre }}"><br>
+
+  <label for="watch_grade">관람등급</label>
+  <input id="watch_grade" type="text" name="watch_grade" value="{{ edit_movie.watch_grade }}"><br>
+
+  <label for="score">평점</label>
+  <input id="score" type="number" name="score" value="{{ edit_movie.score }}"><br>
+
+  <label for="poster_url">포스터 URL</label>
+  <input id="poster_url" type="text" name="poster_url" value="{{ edit_movie.poster_url }}"><br>
+
+  <label for="description">영화 소개</label>
+  <textarea id="description" name="description">{{ edit_movie.description }}</textarea>
+  <button type="submit">수정하기</button>
+</form>
+
+
+{% endblock content %}
+

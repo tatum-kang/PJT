@@ -1,0 +1,22 @@
+
+{% extends 'base.html' %}
+{% block title %}영화 정보 조회{% endblock title %}
+
+{% block content %}
+  <h1>영화 정보 조회</h1>
+  <hr>
+  <p>영화명(국문) : {{ select_movie.title }}</p>
+  <p>영화명(영문) : {{ select_movie.title_en }} </p>
+  <p>누적 관객수 : {{ select_movie.audience }}</p>
+  <p>개봉일 : {{ select_movie.open_date }}</p>
+  <p>장르 : {{ select_movie.genre }}</p>
+  <p>관람등급 : {{ select_movie.watch_grade }}</p>
+  <p>평점 : {{ select_movie.score }}</p>
+  <p>포스터 URL : {{ select_movie.poster_url }}</p>
+  <p>영화 소개 : {{ select_movie.description }}</p>
+
+  <a class="mr-2" href="/movies/">목록</a>
+  <a class="mr-2" href="/movies/{{ select_movie.id }}/edit/">수정</a>
+  <a class="mr-2" href="/movies/{{ select_movie.id }}/delete/">삭제</a>
+{% endblock content %}
+
