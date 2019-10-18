@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block container %}
+
+<h1>{{ movie.title }} : {{ movie.title_en }}</h1>
+<hr>
+<div>
+    <div>누적관객수: {{ movie.audience }}</div>
+    <div>개봉일: {{ movie.open_date }}</div>
+    <div>장르: {{ movie.genre }}</div>
+    <div>관람등급: {{ movie.watch_grade }}</div>
+    <div>평점: {{ movie.score }}</div>
+    <div>포스터이미지: {{ movie.poster_url }}</div>
+</div>
+<hr>
+<p>{{ article.description }} </p>
+<div>  
+    <a href="{% url 'movies:index'%}">목록</a>  
+    <a href="{% url 'movies:update' movie.pk %}">수정</a>  
+    <form action="{% url 'movies:delete' movie.pk %}" method="post" style="display: inline-block;">
+    {% csrf_token %}
+    <input type="submit" value="삭제"/>
+</form> 
+</div>
+
+<ul>
+    {% for comment in movie.comments.all %}
+    <li>
+        {{ comment.content }} : {{ comment.score }}
+        <form action="{% url 'movies:comments_delete' movie.pk comment.pk %}" style="display: inline-block;" method="post">
+            {% csrf_token %}
+            <input type="submit" value="삭제"/>
+        </form>
+    </li>
+    {% empty %}
+    <p>한줄평이 없습니다. 평가해주세요.</p>
+    {% endfor %}
+</ul>
+
+<form action="{% url 'movies:review' movie.pk %}" method="post">
+    {% csrf_token %}
+    {{ comment_form }}
+    <input type="submit" value="작성"/>
+</form>
+
+
+{% endblock %}

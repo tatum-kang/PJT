@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>영화 추천</title>
+</head>
+<body>
+    <header>
+        <a href="{% url 'movies:index' %}">영화목록</a>
+        {% comment %} <a href="{% url 'movies:create' %}">영화 정보 생성</a> {% endcomment %}
+    </header>
+    <hr>
+    <div class="container">
+        {% block container %}{% endblock %}
+    </div>
+</body>
+</html>
